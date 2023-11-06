@@ -357,12 +357,6 @@ protezione della privacy degli utenti.
 {% capture callout %}
 
 Gli esempi che seguono fanno tutti riferimento alla piattaforma di terze parti YouTube. 
-Per far funzionare questi esempi nel proprio progetto occorre installare l'apposito plugin 
-Video.js importandolo come script.
-
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/3.0.1/Youtube.min.js"></script>
-```
 
 {% endcapture %}{% include callout.html content=callout type="warning" %}
 
@@ -377,7 +371,7 @@ Coinvolgi il Responsabile per la protezione dei dati (RDP/DPO) della tua amminis
 L'utilizzo di un overlay per il consenso è una soluzione comune per garantire 
 la conformità alla normativa sulla privacy in materia di cookie e tracciamento degli utenti.
 L'overlay per il consenso consente di informare l'utente sui cookie utilizzati e 
-di ottenere il suo consenso in modo esplicito e consapevole alla riproduzione del video.
+di ottenere il suo consenso in modo esplicito e consapevole alla riproduzione del video prima dell'installazione di qualunque cookie.
 
 {% capture callout %}
 In questo la Pubblica Amministrazione che fa uso di servizi di terze parti come YouTube deve necessariamente specificare l’utilizzo di cookie di tracciamento da parte di piattaforme di terze parti, inserendo inoltre il link alla propria cookie policy all'interno dell'overlay (dove adesso c'è il link a '#'). Nella sezione seguente vengono illustrate le funzioni per la gestione delle preferenze con JavaScript.
@@ -398,15 +392,15 @@ In questo la Pubblica Amministrazione che fa uso di servizi di terze parti come 
       <div class="acceptoverlay-icon">
         <svg class="icon icon-xl"><use href="{{ site.baseurl }}/dist/svg/sprites.svg#it-video"></use></svg>
       </div>
-        <p>Devi accettare i cookie di YouTube per abilitare la visione di questo contenuto. Scopri cosa sono i cookie e approfondisci i dettagli nella nostra <a href="#" class="text-white">cookie policy</a>.
+        <p>Accetta i cookie di YouTube per vedere il video. Puoi gestire le preferenze nella <a href="#" class="text-white">cookie policy</a>.
         </p>
       <div class="acceptoverlay-buttons bg-dark">
-        <div class="form-check">
-          <input id="chk-remember" type="checkbox" data-bs-accept-remember>
-          <label for="chk-remember">Ricorda la mia scelta</label>
-        </div>
         <button type="button" class="btn btn-primary" data-bs-accept-from="youtube.com"
         onclick="loadYouTubeVideo('https://youtu.be/_0j7ZQ67KtY')">Accetta</button>
+        <div class="form-check">
+          <input id="chk-remember" type="checkbox" data-bs-accept-remember>
+          <label for="chk-remember">Ricorda per tutti i video</label>
+        </div>
       </div>
     </div>
   </div>
